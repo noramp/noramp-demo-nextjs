@@ -1,8 +1,10 @@
 export const API_KEY = process.env.API_KEY;
 
 export const APP_ID = process.env.NEXT_PUBLIC_APP_ID;
-export const TRIGGER_ID = process.env.NEXT_PUBLIC_TRIGGER_ID;
 export const IS_MARKETPLACE = process.env.NEXT_PUBLIC_IS_MARKETPLACE || false;
+
+export const TRIGGER_ID = process.env.TRIGGER_ID;
+export const TRIGGER_DATA = process.env.TRIGGER_DATA;
 
 const VERCEL_URL = process.env.NEXT_PUBLIC_VERCEL_URL ?? process.env.VERCEL_URL;
 export const BASE_URL = `https://${VERCEL_URL}`;

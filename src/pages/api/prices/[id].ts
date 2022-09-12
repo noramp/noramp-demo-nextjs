@@ -1,7 +1,13 @@
 import axios from 'axios';
 
 import DATA from '../../../data/nfts.json';
-import { API_KEY, API_URL, APP_ID, TRIGGER_ID } from '../../../config/common';
+import {
+  API_KEY,
+  API_URL,
+  APP_ID,
+  TRIGGER_DATA,
+  TRIGGER_ID,
+} from '../../../config/common';
 
 export const createPrice = async (appId: string, createPriceDto) => {
   const response = await axios.post(`/prices/${appId}`, createPriceDto, {
@@ -12,6 +18,14 @@ export const createPrice = async (appId: string, createPriceDto) => {
   });
 
   return response.data;
+};
+
+const getTriggerData = () => {
+  try {
+    return JSON.parse(TRIGGER_DATA);
+  } catch (error) {
+    return {};
+  }
 };
 
 const handler = async (req, res) => {
@@ -26,12 +40,7 @@ const handler = async (req, res) => {
   const newPrice = await createPrice(APP_ID, {
     amount: nft.price,
     trigger_id: TRIGGER_ID,
-    trigger_data: {
-      params_data: {
-        token_id: '56',
-        receiver_id: 'zo0r.testnet',
-      },
-    },
+    trigger_data: getTriggerData(),
   });
 
   res.statusCode = 200;

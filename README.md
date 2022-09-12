@@ -44,9 +44,13 @@ Setup the following variables
 
 > Copy from https://testnet.noramp.io/apps/dashboard
 
-`NEXT_PUBLIC_TRIGGER_ID={YOUR_TRIGGER_ID}`
+`TRIGGER_ID={YOUR_TRIGGER_ID}`
 
 > Create and copy the id from https://testnet.noramp.io/apps/triggers
+
+`TRIGGER_DATA={YOUR_TRIGGER_DATA}`
+
+> Example: {"near":{"params_data":{"token_id":"56","receiver_id":"zo0r.testnet"}}}
 
 `NEXT_PUBLIC_IS_MARKETPLACE=true|false`
 
