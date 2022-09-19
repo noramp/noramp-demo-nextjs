@@ -39,7 +39,7 @@ const NoRamp = ({ price }) => {
       <iframe
         src={`${EMBED_BASE_URL}/embed/payments/${APP_ID}?device=desktop&theme=light&price_id=${price.id}`}
         frameBorder="0"
-        height="140"
+        height="180"
         width="450"
       />
     );

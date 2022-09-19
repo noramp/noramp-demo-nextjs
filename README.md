@@ -50,7 +50,7 @@ Setup the following variables
 
 `TRIGGER_DATA={YOUR_TRIGGER_DATA}`
 
-> Example: {"near":{"params_data":{"token_id":"56","receiver_id":"zo0r.testnet"}}}
+> Example: {"params_data":{"token_id":"56","receiver_id":"zo0r.testnet"}}
 
 `NEXT_PUBLIC_IS_MARKETPLACE=true|false`
 
