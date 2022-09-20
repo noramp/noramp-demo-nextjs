@@ -19,33 +19,17 @@ const NoRamp = ({ price }) => {
 
   if (!price) return <div>Loading...</div>;
 
-  const renderContent = () => {
-    if (success) {
-      return (
-        <>
-          <div
-            className="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
-            role="alert"
-          >
-            <span className="font-medium">Payment successful</span>
-          </div>
-
-          <Celebrate />
-        </>
-      );
-    }
-
-    return (
+  return (
+    <div className="flex flex-col items-center">
       <iframe
-        src={`${EMBED_BASE_URL}/embed/payments/${APP_ID}?device=desktop&theme=light&price_id=${price.id}`}
+        src={`${EMBED_BASE_URL}/embed/payments/${APP_ID}?device=desktop&theme=dark&price_id=${price.id}`}
         frameBorder="0"
         height="180"
         width="450"
       />
-    );
-  };
-
-  return <div className="flex flex-col items-center">{renderContent()}</div>;
+      {success && <Celebrate />}
+    </div>
+  );
 };
 
 export default NoRamp;
